@@ -29,7 +29,14 @@
           <h2>a better way to camp</h2>
         </div>
         <div class="col-md-4 col-xl-2 mt-4">
-          <a class="text-nowrap"><button class="btn btn-info btn-lg">Reserve Campsite</button></a>
+          <!--The way that was suggested when I asked in the workshop actually didn't work 
+          Suggested: <button><a></a></button> with all needed Bootstrap classes
+          This created text within the button that was the underlined style, blue, etc.
+          When I used either:
+          (1) <a><button></button></a> with all needed Bootstrap classes, it worked; and,
+          (2) <a href="#reserveForm" class="text-nowrap btn btn-info btn-lg">blah blah</a> it also worked. 
+          -->
+          <a href="#reserveForm" class="text-nowrap btn btn-info btn-lg">Reserve Campsite</a>
         </div>
       </div>
     </div>
