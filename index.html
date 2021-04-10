@@ -30,15 +30,17 @@
           <h1>NuCamp</h1>
           <h2>a better way to camp</h2>
         </div>
+        <!--Reserve Campsite button that calls a modal displaying Reserve form-->
         <div class="col-md-4 col-xl-2 mt-4">
           <a class="text-nowrap btn btn-info btn-lg" data-toggle="modal" data-target="#reserveModal">Reserve
             Campsite</a>
         </div>
+        <!--End Reserve Campsite button-->
       </div>
     </div>
   </header>
 
-  <!--Reserve Modal-->
+  <!--Reserve Modal called using "Reserve Campsite" button in <header>-->
   <div id="reserveModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
@@ -48,6 +50,7 @@
         </div>
         <div class="modal-body">
           <div class="container-fluid">
+            <!--Reserve Form start-->
             <form>
               <div class="form-group row">
                 <div class="col-sm-6">
@@ -93,6 +96,7 @@
                 </div>
               </div>
             </form>
+            <!--Reserve form end-->
           </div>
         </div>
       </div>
