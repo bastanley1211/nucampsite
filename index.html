@@ -18,6 +18,8 @@
 </head>
 
 <body>
+
+  <!--Header Responsive Jumbotron-->
   <header class="jumbotron jumbotron-fluid">
     <div class="container">
       <div class="row">
@@ -29,19 +31,75 @@
           <h2>a better way to camp</h2>
         </div>
         <div class="col-md-4 col-xl-2 mt-4">
-          <!--The way that was suggested when I asked in the workshop actually didn't work 
-          Suggested: <button><a></a></button> with all needed Bootstrap classes
-          This created text within the button that was the underlined style, blue, etc.
-          When I used either:
-          (1) <a><button></button></a> with all needed Bootstrap classes, it worked; or,
-          (2) <a href="#reserveForm" class="text-nowrap btn btn-info btn-lg">blah blah</a> it also worked. 
-          -->
-          <a href="#reserveForm" class="text-nowrap btn btn-info btn-lg" data-toggle="tooltip" data-placement="bottom"
-            data-html="true" title="Or call us at <br /><strong>1-206-555-1234</strong>">Reserve Campsite</a>
+          <a class="text-nowrap btn btn-info btn-lg" data-toggle="modal" data-target="#reserveModal">Reserve
+            Campsite</a>
         </div>
       </div>
     </div>
   </header>
+
+  <!--Reserve Modal-->
+  <div id="reserveModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-info text-white">
+          <h3 class="modal-title">Reserve a Campsite</h3>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form>
+              <div class="form-group row">
+                <div class="col-sm-6">
+                  <label class="col col-form-label">Number of Campers</label>
+                </div>
+                <div class="col">
+                  <select class="form-control" name="numCampers" id="numCampers">
+                    <option>Select...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <label class="col col-form-label" for="date">Date</label>
+                </div>
+                <div class="col">
+                  <input type="date" class="form-control" id="date" name="date" placeholder="" />
+                </div>
+              </div>
+              <div class="form-group row mt-3">
+                <label for="siteType" class="col-6 col-form-label">Campsite Type</label>
+                <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons">
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-success active">
+                      <input type="radio" name="siteType" id="siteTent" autocomplete="off" checked> Tent
+                    </label>
+                    <label class="btn btn-primary">
+                      <input type="radio" name="siteType" id="siteRV" autocomplete="off"> RV
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <button class="btn btn-secondary mt-3" data-dismiss="modal">Cancel</button>
+                  <button class="btn btn-primary mt-3" type="submit">Search</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Navbar-->
   <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
     <div class="container">
       <a class="navbar-brand" href="#"><img src="img/logo.png" height="30" width="30" />
@@ -116,7 +174,7 @@
     </div>
   </div>
 
-  <!--Main-->
+  <!--Main Container start-->
 
   <!--Carousel-->
 
@@ -167,6 +225,9 @@
           </a>
         </div>
       </div>
+      <!--Main Content Start-->
+
+      <!--Main section #1-->
       <div class="row row-content align-items-center">
         <div class="col-sm-4 order-sm-last col-md-3">
           <h2 class="text-sm-right">Discover & Review</h2>
@@ -185,128 +246,98 @@
           </div>
         </div>
       </div>
-
-      <div class="row row-content align-items-center">
-        <div class="col-sm-4 col-md-3">
-          <h2>Featured Campsites</h2>
-        </div>
-        <div class="col">
-          <h3>React Lake Campground</h3>
-          <div class="media">
-            <div class="media-body">
-              <p>
-                Nestled in the foothills of the Chrome Mountains, this
-                campground on the shores of the pristine React Lake is a
-                favorite for fly fishers.
-              </p>
-            </div>
-            <img class="d-flex ml-3 img-thumbnail" src="img/react-lake-thumb.jpg" />
-          </div>
-        </div>
+    </div>
+    <!--Main Section #2-->
+    <div class="row row-content align-items-center">
+      <div class="col-sm-4 col-md-3">
+        <h2>Featured Campsites</h2>
       </div>
-
-      <div class="row row-content align-items-center">
-        <div class="col-sm-4 order-sm-last col-md-3">
-          <h2 class="text-sm-right">Our Community Partners</h2>
-        </div>
-        <div class="col">
-          <div class="media">
-            <img class="d-flex mr-3 img-thumbnail" src="img/bootstrap-thumb.png" alt="Bootstrap Outfitters" />
-            <div class="media-body align-self-center">
-              <h3>Bootstrap Outfitters</h3>
-              <p>
-                Bootstrap Outfitters supplies you with gear you need at prices
-                you can't beat.
-              </p>
-            </div>
+      <div class="col">
+        <h3>React Lake Campground</h3>
+        <div class="media">
+          <div class="media-body">
+            <p>
+              Nestled in the foothills of the Chrome Mountains, this
+              campground on the shores of the pristine React Lake is a
+              favorite for fly fishers.
+            </p>
           </div>
-        </div>
-      </div>
-      <div class="row row-content">
-        <div class="col col-sm-6 mx-auto">
-          <div class="card">
-            <h3 class="card-header bg-info text-white">
-              Reserve a Campsite
-            </h3>
-            <div class="card-body">
-              <form id="reserveForm">
-                <div class="form-group row">
-                  <div class="col-sm-6">
-                    <label class="col col-form-label">Number of Campers</label>
-                  </div>
-                  <div class="col">
-                    <select class="form-control" name="numCampers" id="numCampers">
-                      <option>Select...</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <label class="col col-form-label" for="date">Date</label>
-                  </div>
-                  <div class="col">
-                    <input type="date" class="form-control" id="date" name="date" placeholder="" />
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <button class="btn btn-primary mt-3" type="submit">Search</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
+          <img class="d-flex ml-3 img-thumbnail" src="img/react-lake-thumb.jpg" />
         </div>
       </div>
     </div>
 
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-4 col-sm-2 offset-1">
-            <h5>Links</h5>
-            <ul class="list-unstyled">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="#">Sites</a></li>
-              <li><a href="contactus.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-sm-5 text-center">
-            <h5>Social</h5>
-            <a class="btn btn-social-icon btn-instagram" href="http://instagram.com/">
-              <i class="fa fa-instagram"> </i></a>
-            <a class="btn btn-social-icon btn-facebook" href="http://facebook.com/">
-              <i class="fa fa-facebook"> </i></a>
-            <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/">
-              <i class="fa fa-twitter"> </i></a>
-            <a class="btn btn-social-icon btn-google" href="http://youtube.com/">
-              <i class="fa fa-youtube"> </i></a>
-          </div>
-          <div class="col-sm-4 text-center">
-            <a role="button" class="btn btn-link" href="tel:+12065551234"><i class="fa fa-phone"></i>
-              1-206-555-1234</a><br />
-            <a role="button" class="btn btn-link" href="mailto:campsites@nucamp.co"><i class="fa fa-envelope-o"></i>
-              campsites@nucamp.co</a>
+    <!--Main section #3-->
+    <div class="row row-content align-items-center">
+      <div class="col-sm-4 order-sm-last col-md-3">
+        <h2 class="text-sm-right">Our Community Partners</h2>
+      </div>
+      <div class="col">
+        <div class="media">
+          <img class="d-flex mr-3 img-thumbnail" src="img/bootstrap-thumb.png" alt="Bootstrap Outfitters" />
+          <div class="media-body align-self-center">
+            <h3>Bootstrap Outfitters</h3>
+            <p>
+              Bootstrap Outfitters supplies you with gear you need at prices
+              you can't beat.
+            </p>
           </div>
         </div>
       </div>
-    </footer>
-    <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
-    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-      $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-      })
-    </script>
+    </div>
+    <div class="row row-content">
+      <div class="col col-sm-6 mx-auto">
+
+      </div>
+    </div>
+  </div>
+
+  <!--Footer-->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+
+        <!--Footer nav-->
+        <div class="col-4 col-sm-2 offset-1">
+          <h5>Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Sites</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+          </ul>
+        </div>
+        <!--Footer social links icons-->
+        <div class="col-6 col-sm-5 text-center">
+          <h5>Social</h5>
+          <a class="btn btn-social-icon btn-instagram" href="http://instagram.com/">
+            <i class="fa fa-instagram"> </i></a>
+          <a class="btn btn-social-icon btn-facebook" href="http://facebook.com/">
+            <i class="fa fa-facebook"> </i></a>
+          <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/">
+            <i class="fa fa-twitter"> </i></a>
+          <a class="btn btn-social-icon btn-google" href="http://youtube.com/">
+            <i class="fa fa-youtube"> </i></a>
+        </div>
+        <!--Footer contact info-->
+        <div class="col-sm-4 text-center">
+          <a role="button" class="btn btn-link" href="tel:+12065551234"><i class="fa fa-phone"></i>
+            1-206-555-1234</a><br />
+          <a role="button" class="btn btn-link" href="mailto:campsites@nucamp.co"><i class="fa fa-envelope-o"></i>
+            campsites@nucamp.co</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins.-->
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
 </body>
 
 </html>
