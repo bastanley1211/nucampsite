@@ -11,3 +11,19 @@ $(function () {
     }
   });
 });
+
+//Reserve Campsite click open modal
+
+$(function () {
+  $("#reserveButton").click(function () {
+    $("#reserveModal").modal("show");
+  });
+});
+
+//Login button click open modal
+
+$(function () {
+  $("#loginButton").click(function () {
+    $("#loginModal").modal("show");
+  });
+});
